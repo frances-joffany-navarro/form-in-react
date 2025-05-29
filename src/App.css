@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+input.divider,
+select.divider {
+  margin-bottom: 1rem;
+}
+
+label {
+  text-align: left;
+}
