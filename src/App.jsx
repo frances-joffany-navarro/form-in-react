@@ -12,7 +12,7 @@ function App() {
 }
 
 function PersonalInfoForm() {
-  //const [personalData, setPersonalData] = useState([]);
+  const [personalData, setPersonalData] = useState([]);
   //console.log(personalData);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -30,6 +30,39 @@ function PersonalInfoForm() {
       ...prevSubjects,
       [value]: !prevSubjects[value]
     }));
+  }
+
+  function handleResetButton() {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setContact('');
+    setGender('male');
+    setBestSubject({ "english": true, "math": false, "physics": false });
+    setResumeUpload('');
+    setWebsitePortfolioUrl('');
+    setLevel('');
+    setAbout('');
+  }
+  function handleSubmitButton(e) {
+    console.log(e)
+    e.preventDefault();
+    const data = {
+      firstName,
+      lastName,
+      email,
+      contact,
+      gender,
+      bestSubject: Object.keys(bestSubject).filter(subject => bestSubject[subject]),
+      resumeUpload,
+      websitePortfolioUrl,
+      level,
+      about
+    }
+
+    setPersonalData([...personalData, data]);
+    console.log(data);
+    handleResetButton();
   }
 
   return (
@@ -61,17 +94,17 @@ function PersonalInfoForm() {
       <label htmlFor='websitePortfolioUrl'>Enter Website Portfolio URL*</label><br />
       <input className='divider' type="url" name="websitePortfolioUrl" value={websitePortfolioUrl} onChange={(e) => setWebsitePortfolioUrl(e.target.value)} required /><br />
       <label htmlFor="level">Choose your level</label><br />
-      <select className='divider' id="level" name="level" onChange={(e) => setLevel(e.target.value)} >
-        <option value="beginner" name="beginner" >Beginner</option>
-        <option value="intermediate" name="intermediate">Intermediate</option>
-        <option value="advanced" name="advanced">Advanced</option>
+      <select className='divider' id="level" name="level" selected={level} onChange={(e) => setLevel(e.target.value)} >
+        <option value="beginner" name="beginner">Beginner</option>
+        <option value="intermediate" name="intermediate" >Intermediate</option>
+        <option value="advanced" name="advanced" >Advanced</option>
       </select><br />
       <label htmlFor='about'>About</label><br />
       <textarea className='divider' id="about" name="about" rows="5" cols="30" placeholder='Tell us about yourself...' value={about} onChange={(e) => setAbout(e.target.value)}>
       </textarea><br />
       <br />
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
+      <button type="submit" onClick={handleSubmitButton}>Submit</button>
+      <button type="reset" onClick={handleResetButton}>Reset</button>
     </form>
   )
 }
