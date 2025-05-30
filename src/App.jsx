@@ -60,6 +60,11 @@ function PersonalInfoForm() {
       about
     }
 
+    if (data.firstName === '' || data.lastName === '' || data.email === '' || data.contact === '' || data.resumeUpload === '' || data.websitePortfolioUrl === '' || data.level === '') {  
+      alert("Please fill all the required fields.");
+      return;
+    }
+
     setPersonalData([...personalData, data]);
     console.log(data);
     handleResetButton();
@@ -94,7 +99,8 @@ function PersonalInfoForm() {
       <label htmlFor='websitePortfolioUrl'>Enter Website Portfolio URL*</label><br />
       <input className='divider' type="url" name="websitePortfolioUrl" value={websitePortfolioUrl} onChange={(e) => setWebsitePortfolioUrl(e.target.value)} required /><br />
       <label htmlFor="level">Choose your level</label><br />
-      <select className='divider' id="level" name="level" selected={level} onChange={(e) => setLevel(e.target.value)} >
+      <select className='divider' id="level" name="level" defaultValue="" onChange={(e) => setLevel(e.target.value)} >
+        <option value="" disabled>Select Level</option>
         <option value="beginner" name="beginner">Beginner</option>
         <option value="intermediate" name="intermediate" >Intermediate</option>
         <option value="advanced" name="advanced" >Advanced</option>
