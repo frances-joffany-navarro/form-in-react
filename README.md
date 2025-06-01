@@ -1,7 +1,12 @@
 # Form in React
-This is a 1 week project. Starting in 26 May, 2025 until 1 June, 2025
+Phase 1 - This is a 1 week project. Starting in 26 May, 2025 until 1 June, 2025
+
+Phase 2 - Again a 1 week project. Starting 2 June, 2025 until 8 June, 2025
 
 ## Timeline
+
+### Phase 1
+Create form in react, use useState hook, define function for onChange event
 
 - **26 May** : Created repository and setup a react project.
 - **27 May** : Reuse some of the stylesheet from created react project and Started to created the project  static website.
@@ -11,7 +16,9 @@ This is a 1 week project. Starting in 26 May, 2025 until 1 June, 2025
 - **31 May** : Updating the README documentation.
 - **1 June** : Finalizing project
 
-
+### Phase 2
+Validate forms in react
 
 # Credit
 [https://www.geeksforgeeks.org/create-a-form-using-reactjs/](https://www.geeksforgeeks.org/create-a-form-using-reactjs/)
+[https://www.freecodecamp.org/news/how-to-validate-forms-in-react/](https://www.freecodecamp.org/news/how-to-validate-forms-in-react/)
