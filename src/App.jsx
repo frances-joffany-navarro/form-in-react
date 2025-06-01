@@ -60,7 +60,7 @@ function PersonalInfoForm() {
       about
     }
 
-    if (data.firstName === '' || data.lastName === '' || data.email === '' || data.contact === '' || data.resumeUpload === '' || data.websitePortfolioUrl === '' || data.level === '') {  
+    if (data.firstName === '' || data.lastName === '' || data.email === '' || data.contact === '' || data.resumeUpload === '' || data.websitePortfolioUrl === '' || data.level === '') {
       alert("Please fill all the required fields.");
       return;
     }
@@ -81,18 +81,18 @@ function PersonalInfoForm() {
       <label>Contact* </label><br />
       <input className='divider' type="text" name="contact" value={contact} onChange={(e) => setContact(e.target.value)} required /><br />
       <label htmlFor="gender">Gender*</label><br />
-      <input type="radio" id="male" name="gender" value="male" checked={gender === "male"} onChange={(e) => setGender(e.target.value)} required />
+      <input type="radio" className='gender' id="male" name="gender" value="male" checked={gender === "male"} onChange={(e) => setGender(e.target.value)} required />
       <label htmlFor="male">Male</label>
-      <input type="radio" id="female" name="gender" value="female" checked={gender === "female"} onChange={(e) => setGender(e.target.value)} />
+      <input type="radio" className='gender' id="female" name="gender" value="female" checked={gender === "female"} onChange={(e) => setGender(e.target.value)} />
       <label htmlFor="female">Female</label>
-      <input className='divider' type="radio" id="other" name="gender" value="other" checked={gender === "other"} onChange={(e) => setGender(e.target.value)} />
+      <input className='divider gender' type="radio" id="other" name="gender" value="other" checked={gender === "other"} onChange={(e) => setGender(e.target.value)} />
       <label htmlFor="other">Other</label><br />
       <label htmlFor="bestSubject">Your best Subject</label><br />
-      <input type="checkbox" id="bestSubject1" name="bestSubject1" value="english" checked={bestSubject.english} onChange={(e) => handleBestSubject(e.target.value)} />
+      <input className='subject' type="checkbox" id="bestSubject1" name="bestSubject1" value="english" checked={bestSubject.english} onChange={(e) => handleBestSubject(e.target.value)} />
       <label htmlFor="bestSubject1"> English</label>
-      <input type="checkbox" id="bestSubject2" name="bestSubject2" value="math" checked={bestSubject.math} onChange={(e) => handleBestSubject(e.target.value)} />
+      <input className='subject' type="checkbox" id="bestSubject2" name="bestSubject2" value="math" checked={bestSubject.math} onChange={(e) => handleBestSubject(e.target.value)} />
       <label htmlFor="bestSubject2"> Math</label>
-      <input className='divider' type="checkbox" id="bestSubject3" name="bestSubject3" value="physics" checked={bestSubject.physics} onChange={(e) => handleBestSubject(e.target.value)} />
+      <input className='divider subject' type="checkbox" id="bestSubject3" name="bestSubject3" value="physics" checked={bestSubject.physics} onChange={(e) => handleBestSubject(e.target.value)} />
       <label htmlFor="bestSubject3"> Physics</label><br />
       <label htmlFor="resumeUpload">Upload Resume*</label><br />
       <input className='divider' type="file" id='resumeUpload' name="resumeUpload" value={resumeUpload} onChange={(e) => setResumeUpload(e.target.value)} required /><br />
@@ -109,8 +109,11 @@ function PersonalInfoForm() {
       <textarea className='divider' id="about" name="about" rows="5" cols="30" placeholder='Tell us about yourself...' value={about} onChange={(e) => setAbout(e.target.value)}>
       </textarea><br />
       <br />
-      <button type="submit" onClick={handleSubmitButton}>Submit</button>
-      <button type="reset" onClick={handleResetButton}>Reset</button>
+      <div className='button-container'>
+        <button type="reset" onClick={handleResetButton}>Reset</button>
+        <button type="submit" onClick={handleSubmitButton}>Submit</button>
+      </div>
+
     </form>
   )
 }

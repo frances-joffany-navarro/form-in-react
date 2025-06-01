@@ -2,14 +2,30 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
-
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 input.divider,
 select.divider {
   margin-bottom: 1rem;
 }
 
-label {
-  text-align: left;
+
+input:not(.gender, .subject), select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 0 10px 0 10px;
+}
+
+textarea {
+  resize: none;
 }
