@@ -1,12 +1,14 @@
 //import { useState } from 'react'
 import { useState } from 'react'
 import './App.css'
+import { Form } from './Form'
 
 function App() {
   return (
     <>
       <h1>Form in React</h1>
       <PersonalInfoForm />
+      <Form />
     </>
   )
 }
