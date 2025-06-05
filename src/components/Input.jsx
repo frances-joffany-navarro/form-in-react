@@ -6,19 +6,24 @@ import { useFormContext } from 'react-hook-form'
 import { AnimatePresence, motion } from 'framer-motion'
 import { MdError } from 'react-icons/md' */
 
-export const Input = ({ label, type, id, name, value, placeholder, checked, isRequired }) => {
+export const Input = ({ label, type, id, name, value, placeholder, checked, isRequired, onInputChange, onClickButton }) => {
   return <div>
     {type === 'radio' || type === 'checkbox' ?
       <>
-        <input className="radioAndCheckBox" type={type} id={id} name={name} value={value} placeholder={placeholder} checked={checked} required={isRequired} />
+        <input className="radioAndCheckBox" type={type} id={id} name={name} value={value} placeholder={placeholder} checked={checked} required={isRequired} onChange={(e) => onInputChange(e.target.value)} />
         <label htmlFor={name}>{label}</label>
-      </> : <>
+      </> : type === 'button' ? <>
         <label htmlFor={name}>{label}</label>
-        <input type={type} id={id} name={name} value={value} placeholder={placeholder} required={isRequired} />
-      </>
+        <input type={type} id={id} name={name} value={value} placeholder={placeholder} required={isRequired} onChange={(e) => onInputChange(e.target.value)} onClick={(e) => onClickButton(e)} />
+      </> :
+        <>
+          <label htmlFor={name}>{label}</label>
+          <input type={type} id={id} name={name} value={value} placeholder={placeholder} required={isRequired} onChange={(e) => onInputChange(e.target.value)} />
+        </>
+
     }
 
-  </div>
+  </div >
 }
 
 /* const InputError = () => {
