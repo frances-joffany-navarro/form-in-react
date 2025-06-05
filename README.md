@@ -19,6 +19,11 @@ Create form in react, use useState hook, define function for onChange event
 ### Phase 2
 Validate forms in react
 
+- **2 June** : add additional files and created a Input reusable form.
+- **3 June** : Update reusable component to accomodate radio and checkbox.
+- **4 June** : Add interactivity to the reusable component.
+- **5 June** : Continue adding interactivity to the component.
+
 # Credit
 [https://www.geeksforgeeks.org/create-a-form-using-reactjs/](https://www.geeksforgeeks.org/create-a-form-using-reactjs/)
 
