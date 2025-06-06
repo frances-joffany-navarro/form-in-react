@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 export function Form() {
   const [personalData, setPersonalData] = useState([]);
-  //console.log(personalData);
+  const [errors, setErrors] = useState([]);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -21,6 +21,8 @@ export function Form() {
       [value]: !prevSubjects[value]
     }));
   }
+
+  function handleE
 
   function handleResetButton() {
     setFirstName('');
@@ -50,6 +52,7 @@ export function Form() {
       level,
       about
     }
+    const validationErrors = validateForm(data);
 
     if (data.firstName === '' || data.lastName === '' || data.email === '' || data.contact === '' || data.resumeUpload === '' || data.websitePortfolioUrl === '' || data.level === '') {
       alert("Please fill all the required fields.");
