@@ -12,7 +12,11 @@ input.divider,
 select.divider {
   margin-bottom: 1rem;
 }
-
+span.errors {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
 
 input:not(.radioAndCheckBox), select, textarea {
   width: 100%;

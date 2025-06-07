@@ -19,7 +19,7 @@ export const Input = ({ label, type, id, name, value, placeholder, checked, isRe
         <>
           <label htmlFor={name}>{label}</label>
           <input type={type} id={id} name={name} value={value} placeholder={placeholder} required={isRequired} onChange={(e) => onInputChange(e.target.value)} />
-          {error && <span> {error} </span>}
+          {error && <span className="errors"> {error} </span>}
         </>
 
     }

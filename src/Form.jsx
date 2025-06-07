@@ -71,6 +71,21 @@ export function Form() {
     if (!data.firstName) {
       errors.firstName = "First name is required";
     }
+    if (!data.lastName) {
+      errors.lastName = "Last name is required";
+    }
+    if (!data.email) {
+      errors.email = "Email is required";
+    }
+    if (!data.contact) {
+      errors.contact = "Contact is required";
+    }
+    if (!data.gender) {
+      errors.gender = "Gender is required";
+    }
+    if (!data.websitePortfolioUrl) {
+      errors.websitePortfolioUrl = "Website portfolio is required";
+    }
 
     return errors;
   }
@@ -78,9 +93,9 @@ export function Form() {
   return (
     <form>
       <Input label="First Name*" type="text" id="firstName" value={firstName} placeholder="Enter your first name" isRequired={true} onInputChange={setFirstName} error={errors.firstName} />
-      <Input label="Last Name*" type="text" id="lastName" value={lastName} placeholder="Enter your last name" isRequired={true} onInputChange={setLastName} />
-      <Input label="Email*" type="email" id="email" value={email} placeholder="Enter your email address" isRequired={true} onInputChange={setEmail} />
-      <Input label="Contact Number*" type="tel" id="contactNumber" value={contact} placeholder="Enter your contact number" isRequired={true} onInputChange={setContact} />
+      <Input label="Last Name*" type="text" id="lastName" value={lastName} placeholder="Enter your last name" isRequired={true} onInputChange={setLastName} error={errors.lastName}/>
+      <Input label="Email*" type="email" id="email" value={email} placeholder="Enter your email address" isRequired={true} onInputChange={setEmail} error={errors.email}/>
+      <Input label="Contact Number*" type="tel" id="contactNumber" value={contact} placeholder="Enter your contact number" isRequired={true} onInputChange={setContact} error={errors.contact}/>
       <label htmlFor="gender">Gender*</label>
       <Input label="Male" type="radio" id="male" name="gender" value="male" checked={gender === "male"} onInputChange={setGender} />
       <Input label="Female" type="radio" id="female" name="gender" value="female" checked={gender === "female"} onInputChange={setGender} />
@@ -90,7 +105,7 @@ export function Form() {
       <Input label="Math" type="checkbox" id="bestSubject2" name="bestSubject2" value="math" checked={bestSubject.math} onInputChange={handleBestSubject} />
       <Input label="Physics" type="checkbox" id="bestSubject3" name="bestSubject3" value="physics" checked={bestSubject.physics} onInputChange={handleBestSubject} />
       <Input label="Upload Resume" type="file" id="resumeUpload" value={resumeUpload} isRequired={true} onInputChange={setResumeUpload} />
-      <Input label="Website Portfolio URL" type="url" id="websitePortfolioUrl" value={websitePortfolioUrl} placeholder="Enter your website portfolio URL" isRequired={true} onInputChange={setWebsitePortfolioUrl} />
+      <Input label="Website Portfolio URL*" type="url" id="websitePortfolioUrl" value={websitePortfolioUrl} placeholder="Enter your website portfolio URL" isRequired={true} onInputChange={setWebsitePortfolioUrl} error={errors.websitePortfolioUrl}/>
       <label htmlFor="level">Choose your level</label><br />
       <select className='divider' id="level" name="level" defaultValue="" onChange={(e) => setLevel(e.target.value)} >
         <option value="" disabled>Select Level</option>
