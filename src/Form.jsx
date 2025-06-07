@@ -22,7 +22,7 @@ export function Form() {
     }));
   }
 
-  function handleE
+
 
   function handleResetButton() {
     setFirstName('');
@@ -38,7 +38,6 @@ export function Form() {
   }
 
   function handleSubmitButton(e) {
-    console.log(e)
     e.preventDefault();
     const data = {
       firstName,
@@ -54,19 +53,31 @@ export function Form() {
     }
     const validationErrors = validateForm(data);
 
-    if (data.firstName === '' || data.lastName === '' || data.email === '' || data.contact === '' || data.resumeUpload === '' || data.websitePortfolioUrl === '' || data.level === '') {
+    setErrors(validationErrors);
+
+    /* if (data.firstName === '' || data.lastName === '' || data.email === '' || data.contact === '' || data.resumeUpload === '' || data.websitePortfolioUrl === '' || data.level === '') {
       alert("Please fill all the required fields.");
       return;
+    } */
+
+    /* setPersonalData([...personalData, data]);
+    console.log(data);
+    handleResetButton(); */
+  }
+
+  const validateForm = (data) => {
+    const errors = {};
+
+    if (!data.firstName) {
+      errors.firstName = "First name is required";
     }
 
-    setPersonalData([...personalData, data]);
-    console.log(data);
-    handleResetButton();
+    return errors;
   }
 
   return (
     <form>
-      <Input label="First Name*" type="text" id="firstName" value={firstName} placeholder="Enter your first name" isRequired={true} onInputChange={setFirstName} />
+      <Input label="First Name*" type="text" id="firstName" value={firstName} placeholder="Enter your first name" isRequired={true} onInputChange={setFirstName} error={errors.firstName} />
       <Input label="Last Name*" type="text" id="lastName" value={lastName} placeholder="Enter your last name" isRequired={true} onInputChange={setLastName} />
       <Input label="Email*" type="email" id="email" value={email} placeholder="Enter your email address" isRequired={true} onInputChange={setEmail} />
       <Input label="Contact Number*" type="tel" id="contactNumber" value={contact} placeholder="Enter your contact number" isRequired={true} onInputChange={setContact} />

@@ -24,7 +24,7 @@ Validate forms in react
 - **4 June** : Add interactivity to the reusable component.
 - **5 June** : Continue adding interactivity to the component.
 
-# Credit
+## Credit
 [https://www.geeksforgeeks.org/create-a-form-using-reactjs/](https://www.geeksforgeeks.org/create-a-form-using-reactjs/)
 
 [https://www.freecodecamp.org/news/how-to-validate-forms-in-react/](https://www.freecodecamp.org/news/how-to-validate-forms-in-react/)

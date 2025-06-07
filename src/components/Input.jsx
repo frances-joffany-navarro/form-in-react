@@ -6,7 +6,7 @@ import { useFormContext } from 'react-hook-form'
 import { AnimatePresence, motion } from 'framer-motion'
 import { MdError } from 'react-icons/md' */
 
-export const Input = ({ label, type, id, name, value, placeholder, checked, isRequired, onInputChange, onClickButton }) => {
+export const Input = ({ label, type, id, name, value, placeholder, checked, isRequired, onInputChange, onClickButton, error }) => {
   return <div>
     {type === 'radio' || type === 'checkbox' ?
       <>
@@ -19,6 +19,7 @@ export const Input = ({ label, type, id, name, value, placeholder, checked, isRe
         <>
           <label htmlFor={name}>{label}</label>
           <input type={type} id={id} name={name} value={value} placeholder={placeholder} required={isRequired} onChange={(e) => onInputChange(e.target.value)} />
+          {error && <span> {error} </span>}
         </>
 
     }
