@@ -23,6 +23,9 @@ Validate forms in react
 - **3 June** : Update reusable component to accomodate radio and checkbox.
 - **4 June** : Add interactivity to the reusable component.
 - **5 June** : Continue adding interactivity to the component.
+- **6 June** : Watch video to add input validation and implement it in my code
+- **7 June** : Continue input validation feature and displaying the errors upon submit
+- **8 June** : Update Readme and Finalize Form Project - Phase 2
 
 ## Credit
 [https://www.geeksforgeeks.org/create-a-form-using-reactjs/](https://www.geeksforgeeks.org/create-a-form-using-reactjs/)
