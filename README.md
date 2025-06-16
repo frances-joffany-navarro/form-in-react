@@ -3,6 +3,8 @@ Phase 1 - This is a 1 week project. Starting in 26 May, 2025 until 1 June, 2025
 
 Phase 2 - Again a 1 week project. Starting 2 June, 2025 until 8 June, 2025
 
+## Live Site
+[https://frances-joffany-navarro.github.io/form-in-react/](https://frances-joffany-navarro.github.io/form-in-react/)
 ## Timeline
 
 ### Phase 1
@@ -33,3 +35,5 @@ Validate forms in react
 [https://www.freecodecamp.org/news/how-to-validate-forms-in-react/](https://www.freecodecamp.org/news/how-to-validate-forms-in-react/)
 
 [https://www.youtube.com/watch?v=VJ1OWCQJhLk](https://www.youtube.com/watch?v=VJ1OWCQJhLk)
+
+[https://www.youtube.com/watch?v=hn1IkJk24ow](https://www.youtube.com/watch?v=hn1IkJk24ow)
